@@ -1,0 +1,9 @@
+# require File.expand_path("../../lib/codebreaker/game.rb", __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'codebreaker'
+
+game = Codebreaker::Game.new(STDOUT)
+game.start('1234')
+while guess = gets.chomp
+  game.guess(guess)
+end
